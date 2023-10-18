@@ -2,58 +2,31 @@ import React, { useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 
-const Form = (props) => {
-  const [userInput, setUserInput] = useState({
+const defaultInputValues = {
     'current-savings': 0,
     'yearly-contribution': 0,
     'expected-return': 0,
     duration: 0,
-  });
+}
 
-  // TODO: Refactor the below code to a single function
+const Form = (props) => {
+  const [userInput, setUserInput] = useState(defaultInputValues);
 
-  const onChangeCurrentSavingsHandler = (e) => {
+  const inputChangeHandler = (input, value) => {
+    console.log(input, value);
     setUserInput((prevState) => ({
       ...prevState,
-      'current-savings': e.target.value,
-    }));
-  };
-
-  const onChangeYearlyContributionHandler = (e) => {
-    setUserInput((prevState) => ({
-      ...prevState,
-      'yearly-contribution': e.target.value,
-    }));
-  };
-
-  const onChangeExpectedReturnHandler = (e) => {
-    setUserInput((prevState) => ({
-      ...prevState,
-      'expected-return': e.target.value,
-    }));
-  };
-
-  const onChangeDurationHandler = (e) => {
-    setUserInput((prevState) => ({
-      ...prevState,
-      duration: e.target.value,
+      [input]: value,
     }));
   };
 
   const resetFormHandler = () => {
-    setUserInput({
-      'current-savings': 0,
-      'yearly-contribution': 0,
-      'expected-return': 0,
-      duration: 0,
-    });
-    console.log('form reset!');
+    setUserInput(defaultInputValues);
   };
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    console.log('form submitted!');
-    props.onSubmit(userInput)
+    props.onSubmit(userInput);
   };
 
   return (
@@ -63,14 +36,14 @@ const Form = (props) => {
           label='Current Savings ($)'
           id='current-savings'
           type='number'
-          onChange={onChangeCurrentSavingsHandler}
+          onChange={inputChangeHandler}
           value={userInput['current-savings']}
         />
         <Input
           label='Yearly Savings ($)'
           id='yearly-contribution'
           type='number'
-          onChange={onChangeYearlyContributionHandler}
+          onChange={inputChangeHandler}
           value={userInput['yearly-contribution']}
         />
       </div>
@@ -79,14 +52,14 @@ const Form = (props) => {
           label='Expected Interest (%, per year)'
           id='expected-return'
           type='number'
-          onChange={onChangeExpectedReturnHandler}
+          onChange={inputChangeHandler}
           value={userInput['expected-return']}
         />
         <Input
           label='Investment Duration (years)'
           id='duration'
           type='number'
-          onChange={onChangeDurationHandler}
+          onChange={inputChangeHandler}
           value={userInput['duration']}
         />
       </div>

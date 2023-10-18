@@ -15,7 +15,7 @@ const Table = (props) => {
       </thead>
       <tbody>
         {props.data.map((item) => (
-          <TableRow rowData={item} key={item['year'].toString()} />
+          <TableRow rowData={item} key={item.year} />
         ))}
       </tbody>
     </table>
