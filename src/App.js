@@ -52,7 +52,7 @@ function App() {
     <div>
       <Header />
       <Form onSubmit={calculateHandler} />
-      {tableData ? <Table data={tableData} /> : <p>No data to display</p>}
+      {tableData ? <Table data={tableData} /> : <p style={{textAlign: 'center'}}>No data to display. Enter some data above to get started!</p>}
     </div>
   );
 }
