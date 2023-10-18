@@ -1,9 +1,10 @@
 import React from 'react';
 import TableRow from '../TableRow/TableRow';
+import styles from './Table.module.css'
 
 const Table = (props) => {
   return (
-    <table className='result'>
+    <table className={styles.result}>
       <thead>
         <tr>
           <th>Year</th>

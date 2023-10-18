@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import styles from './Form.module.css'
 
 const defaultInputValues = {
     'current-savings': 0,
@@ -30,8 +31,8 @@ const Form = (props) => {
   };
 
   return (
-    <form className='form' onSubmit={submitFormHandler}>
-      <div className='input-group'>
+    <form className={styles.form} onSubmit={submitFormHandler}>
+      <div className={styles['input-group']}>
         <Input
           label='Current Savings ($)'
           id='current-savings'
@@ -47,7 +48,7 @@ const Form = (props) => {
           value={userInput['yearly-contribution']}
         />
       </div>
-      <div className='input-group'>
+      <div className={styles['input-group']}>
         <Input
           label='Expected Interest (%, per year)'
           id='expected-return'
@@ -63,11 +64,11 @@ const Form = (props) => {
           value={userInput['duration']}
         />
       </div>
-      <p className='actions'>
-        <Button type='reset' className='buttonAlt' onClick={resetFormHandler}>
+      <p className={styles.actions}>
+        <Button type='reset' onClick={resetFormHandler}>
           Reset
         </Button>
-        <Button type='submit' className='button'>
+        <Button type='submit'>
           Calculate
         </Button>
       </p>

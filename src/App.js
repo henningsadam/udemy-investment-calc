@@ -52,12 +52,7 @@ function App() {
     <div>
       <Header />
       <Form onSubmit={calculateHandler} />
-
-      {tableData ? (
-        <Table data={tableData} />
-      ) : (
-        <p className='result'>No data to display</p>
-      )}
+      {tableData ? <Table data={tableData} /> : <p>No data to display</p>}
     </div>
   );
 }
