@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/udemy-investment-calc/static/css/main.06f68826.css",
+    "main.js": "/udemy-investment-calc/static/js/main.3f728331.js",
+    "static/media/investment-calculator-logo.png": "/udemy-investment-calc/static/media/investment-calculator-logo.c20da4d5b23f8d49ad00.png",
+    "index.html": "/udemy-investment-calc/index.html",
+    "main.06f68826.css.map": "/udemy-investment-calc/static/css/main.06f68826.css.map",
+    "main.3f728331.js.map": "/udemy-investment-calc/static/js/main.3f728331.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06f68826.css",
+    "static/js/main.3f728331.js"
+  ]
+}
